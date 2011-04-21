@@ -118,21 +118,18 @@ public class PlayerTest extends TestCase implements PlayerListener {
 		assertSame (new_piece, listener_this_piece);
 	}
 
-	@Override
 	public void onLooseAPiece(Player me, Piece thisPiece) {
 		listener_loose_trace = true;
 		listener_me = me;
 		listener_this_piece = thisPiece;		
 	}
 
-	@Override
 	public void onNewPiece(Player me, Piece thisPiece) {
 		listener_new_trace = true;
 		listener_me = me;
 		listener_this_piece = thisPiece;	
 	}
 
-	@Override
 	public void onWinAPiece(Player me, Piece thisPiece) {
 		listener_win_trace = true;
 		listener_me = me;

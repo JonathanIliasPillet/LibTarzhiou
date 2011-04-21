@@ -162,21 +162,18 @@ public class CellTests extends TestCase implements CellListener, LinkeableCellLi
 		assertSame (tested_cell, other.getNeighbors().iterator().next());
 	}
 
-	@Override
 	public void onAddPiece(Cell me, Piece thisPiece) {
 		listener_add_trace = true;
 		listener_me = me;
 		listener_piece = thisPiece;		
 	}
 
-	@Override
 	public void onBurst(Cell me) {
 		listener_me = me;
 		listener_burst_trace = true;
 		
 	}
 
-	@Override
 	public void onLink(LinkeableCell me, LinkeableCell other) {
 		listener_link_trace = true;
 		listener_me = me;

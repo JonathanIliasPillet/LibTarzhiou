@@ -181,13 +181,11 @@ public class DisorderedCellSpaceTests extends TestCase implements CellListener
     assertTrue (listener_trace_burst);
   }
 
-  @Override
   public void onAddPiece(Cell me, Piece thisPiece) 
   {
     listener_trace_add_piece = true;
   }
 
-  @Override
   public void onBurst(Cell me)
   {
     if (test_stop_all_bursts && me.getKey().equals(new NameCellKey("c5")))
