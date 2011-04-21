@@ -113,7 +113,7 @@ public abstract class ReadOnlyCellSpace
     while (i.hasNext() && is_valid)
     {
       currentCell = i.next();
-      if (currentCell.getCapacity() < 2)
+      if (currentCell.getCapacity() < 1)
       {
         is_valid = false;
       }
