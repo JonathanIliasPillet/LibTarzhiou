@@ -139,6 +139,15 @@ public abstract class ReadOnlyCellSpace
     return cells.contains(thisCell);
   }
 
+  public Set<Cell> getReadOnlyCells ()
+  {
+    Set<Cell> result = new LinkedHashSet<Cell>();
+    
+    result.addAll(cells);
+    
+    return result;
+  }
+  
   /**
    * TODO: fix this : should not give a reference to a private attribute
    * 
