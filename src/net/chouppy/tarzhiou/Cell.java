@@ -112,6 +112,12 @@ public abstract class Cell
    */
   protected void receivePiece(Piece this_piece)
   {
+    Player oldOwner = null;
+    Player newOwner = this_piece.getOwner();
+    
+    if (!myPieces.isEmpty())
+      oldOwner = myPieces.iterator().next().getOwner();
+    
     // change all pieces owner
     for (Piece current_piece : myPieces)
     {
@@ -119,6 +125,12 @@ public abstract class Cell
     }
     // finally adds the piece to the cell
     myPieces.add(this_piece);
+    
+    // calls listener if any
+    for (CellListener listener : myListeners)
+    {
+      listener.onGetPiece(this, oldOwner, newOwner);
+    }
   }
 
   /**
